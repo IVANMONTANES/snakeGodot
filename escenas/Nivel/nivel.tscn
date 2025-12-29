@@ -1,5 +1,31 @@
-[gd_scene format=3 uid="uid://u4xqxrfk3prd"]
+[gd_scene load_steps=5 format=3 uid="uid://u4xqxrfk3prd"]
+
+[ext_resource type="PackedScene" uid="uid://b0akdebo2kb3g" path="res://escenas/bordes/tile_map_layer.tscn" id="1_2auas"]
+[ext_resource type="PackedScene" uid="uid://deuhtip5kd8yh" path="res://escenas/Fondo/fondo.tscn" id="2_psgt2"]
+[ext_resource type="PackedScene" uid="uid://h5d4o6lu35nw" path="res://escenas/cabeza_vibora/cabeza_vibora.tscn" id="3_ifxm5"]
+[ext_resource type="PackedScene" uid="uid://b0vx7soo0gom1" path="res://escenas/Manzana/manzana.tscn" id="4_16w80"]
 
 [node name="Nivel" type="Node2D"]
 
+[node name="Bordes" parent="." instance=ExtResource("1_2auas")]
+
+[node name="Fondo" parent="Bordes" instance=ExtResource("2_psgt2")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="CabezaVibora" parent="." instance=ExtResource("3_ifxm5")]
+position = Vector2(-450, -333)
+
+[node name="Manzanas" type="Node2D" parent="."]
+
+[node name="Manzana" parent="Manzanas" instance=ExtResource("4_16w80")]
+
+[node name="Manzana2" parent="Manzanas" instance=ExtResource("4_16w80")]
+position = Vector2(-305, 244)
+
+[node name="Manzana3" parent="Manzanas" instance=ExtResource("4_16w80")]
+position = Vector2(338, -262)
+
+[node name="Manzana4" parent="Manzanas" instance=ExtResource("4_16w80")]
+position = Vector2(281, 296)
